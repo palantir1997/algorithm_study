@@ -22,9 +22,33 @@ D: 아래로 한 칸 이동
 3. x,y가 L,R,U,D에 의하여 1보다 작아지거나 N보다 커지는 경우에는 continue로 값이 변경되지 않게함 (맵 밖으로 벗어나지 않게함)
 4. 최종 x,y 출력
 
+움직이고 나서 그 좌표가 1보다 작아지거나 N보다 커지면 안 된다
 """
 
-n = int(input())
-x, y = 1,1
+n = int(input()) # 벽에 다다르는 막다른곳이라 볼 수 있음.
+x, y = 1,1 # 행, 열
 plans = input().split()
 
+for plan in plans:
+    if plan == 'L':
+        if y == 1:
+            continue
+        y -= 1
+
+    elif plan == 'R':
+        if y == n:
+            continue
+        y += 1
+
+    elif plan == 'U':  # 행은 위로 올라가면 줄어들자너
+        if x == 1:
+            continue
+        x -= 1
+
+    elif plan == 'D': # 행은 아래로 내려가면 커진다!
+        if x == n:
+            continue
+        x += 1
+
+print(x,y)
+        
