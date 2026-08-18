@@ -48,4 +48,4 @@ for i in range(1, m + 1):
 if d[m] == 10001:
     print(-1)
 else:
-    print(d[m])
+    print(d[m]) # 문제에서 요구하는 것은 "가치의 합이 M원이 되도록 하는 최소한의 화폐 개수"
